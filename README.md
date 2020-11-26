@@ -1,2 +1,2 @@
-# git-accounts-manager
-Nuvolar technical test
+# anticipa-tech-test
+Anticipa technical test
