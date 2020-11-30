@@ -69,7 +69,7 @@
 .property {
   width: 20%;
   height: 300px;
-  margin-top: 10px;
+  margin: 10px;
   border: 2px solid $app-white;
   @include border-radius(25px, 25px, 25px, 25px);
   background-color: $app-white;
