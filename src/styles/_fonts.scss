@@ -1,0 +1,27 @@
+// Fonts
+@font-face {
+  font-family: 'Acme', sans-serif;
+  src: url('../assets/fonts/Acme-Regular.ttf');
+}
+
+// Font-Size
+$app-h1High: 15px;
+$app-h1Medium: 11px;
+$app-h1Low: 8px;
+
+$app-h2High: 21px;
+$app-h2Medium: 15px;
+$app-h2Low: 11px;
+
+$app-h3High: 21px;
+$app-h3Medium: 15px;
+$app-h3Low: 8px;
+
+$app-pHigh: 21px;
+$app-pMedium: 16px;
+$app-pLow: 12px;
+
+// Font Weight
+$app-bold: 600px;
+$app-regular: 400px;
+$app-light: 200px;
