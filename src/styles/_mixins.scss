@@ -1,0 +1,113 @@
+// Flex-box mixins
+@mixin display-flex() {
+  -webkit-box: flex; /* Old - iOS 6-, Safari 3.1~6, Blackberry 7 */
+  -ms-flexbox: flex; /* TWEENER - IE 10 */
+  -webkit-flex: flex; /* New - Safari 6.1+. iOS 7.1+, Blackberry 10 */
+  -moz-flex: flex;
+  display: flex; /* New, Spec - Firefox, Chrome, Opera */
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+
+  -webkit-flex-direction: $value; /* Chrome 21.0+, But Safari & Android & iOS Not supported. */
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value; /* Firefox 28+, IE11, Opera 12.10 */
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+
+  -webkit-justify-content: $value; /* Chrome 21+, Safari Not supported. */
+  -moz-justify-content: $value; /* Chrome 21+, Safari Not supported. */
+  justify-content: $value; /* Firefox 20+, Opera 12.10, IE Not supported. */
+}
+
+// Values: flex-start | flex-end | center | space-between | space-around | stretch
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+
+  -webkit-align-items: $value; /* Safari 7.0+, Chrome 21.0+ */
+  -moz-align-items: $value;
+  align-items: $value; /* Firefox 20.0+, IE11+, Opera 12.10 */
+}
+
+@mixin align-content($value: stretch) {
+  -webkit-align-content: $value; /* Chrome 21.0+, Safari Not supported. */
+  -moz-align-content: $value;
+
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+
+  align-content: $value; /* Firefox 28+, Opera 12.10, IE Not supported. */
+}
+
+@mixin flex-wrap($value: nowrap) {
+  -webkit-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+// Border/Border-Radius
+@mixin border($size, $type, $color) {
+  -webkit-border: $size, $type, $color;
+  -moz-border: $size, $type, $color;
+  -ms-border: $size, $type, $color;
+  border: $size, $type, $color;
+}
+@mixin border-radius(
+  $radius1: 25px,
+  $radius2: 25px,
+  $radius3: 25px,
+  $radius4: 25px
+) {
+  border-radius: $radius1 $radius2 $radius3 $radius4;
+  -webkit-border-radius: $radius1 $radius2 $radius3 $radius4;
+  -moz-border-radius: $radius1 $radius2 $radius3 $radius4;
+}
